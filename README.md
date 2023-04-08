@@ -1,7 +1,7 @@
 # car_service
-This is a web application for a taxi service that provides information to users about all available cars and drivers.
+This is a web application for a car service that provides information to users about all available cars and drivers.
 
-Deployment
+# Deployment
 This project has been deployed on Heroku. You can find it here: https://service-taxi-java.herokuapp.com/
 
 # Features:
