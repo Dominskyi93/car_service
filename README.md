@@ -6,7 +6,7 @@ This project has been deployed on Heroku. You can find it here: https://service-
 
 # Features:
 
-User registration and login
+* User registration and login
 * Ability to view all registered drivers
 * Ability to view all cars
 * Ability to view all car manufacturers
