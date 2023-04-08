@@ -7,13 +7,13 @@ This project has been deployed on Heroku. You can find it here: https://service-
 Features:
 
 User registration and login
-Ability to view all registered drivers
-Ability to view all cars
-Ability to view all car manufacturers
-Possibility to add and delete a new car manufacturer
-Possibility to add and delete a new car
-Ability to assign a driver to a specific car
-Ability to view all cars assigned to a specific driver
+. Ability to view all registered drivers
+. Ability to view all cars
+. Ability to view all car manufacturers
+. Possibility to add and delete a new car manufacturer
+. Possibility to add and delete a new car
+. Ability to assign a driver to a specific car
+. Ability to view all cars assigned to a specific driver
 
 HOW TO RUN
 
