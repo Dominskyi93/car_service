@@ -1,4 +1,4 @@
-# car_service
+# CAR SERVICE
 This is a web application for a car service that provides information to users about all available cars and drivers.
 
 # Deployment
