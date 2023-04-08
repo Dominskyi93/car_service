@@ -4,7 +4,7 @@ This is a web application for a taxi service that provides information to users 
 Deployment
 This project has been deployed on Heroku. You can find it here: https://service-taxi-java.herokuapp.com/
 
-Features:
+# Features:
 
 User registration and login
 * Ability to view all registered drivers
@@ -15,7 +15,7 @@ User registration and login
 * Ability to assign a driver to a specific car
 * Ability to view all cars assigned to a specific driver
 
-HOW TO RUN
+# How to run
 
 To run the project locally, follow these steps:
 
@@ -25,10 +25,10 @@ To run the project locally, follow these steps:
 * Build the project using Maven: mvn package
 * Deploy the WAR file to a servlet container such as Tomcat
 
-Structure
+# Structure
 The project uses tools such as servlets, filters, JSP, JSTL, and password encryption. The project follows the Model-View-Controller (MVC) design pattern, with separate packages for controllers, models, and views.
 
-Author
+# Author
 
 Denys Dominskyi
 
