@@ -1,12 +1,9 @@
 # CAR SERVICE
-This is a web application for a car service that provides information to users about all available cars and drivers.
-
-# Deployment
-This project has been deployed on Heroku. You can find it here: https://service-taxi-java.herokuapp.com/
+This is a web application for a car service that provides information to users about all available cars and drivers. The project uses tools such as servlets, filters, JSP, JSTL, registration, authentication and password encryption. The project follows the Model-View-Controller (MVC) design pattern, with separate packages for controllers, models, and views.
 
 # Features:
-
-* User registration and login
+* User registration
+* User authentication
 * Ability to view all registered drivers
 * Ability to view all cars
 * Ability to view all car manufacturers
@@ -16,20 +13,67 @@ This project has been deployed on Heroku. You can find it here: https://service-
 * Ability to view all cars assigned to a specific driver
 
 # How to run
-
 To run the project locally, follow these steps:
 
 * Clone the project
-* Launch the init_db.sql script in MySQL to create the necessary database tables
-* Enter your MySQL username and password in the ConnectionUtil class
-* Build the project using Maven: mvn package
+* Launch the `init_db.sql` script in MySQL to create the necessary database tables
+* Enter your MySQL username and password in the `ConnectionUtil` class
+* Build the project using Maven: `mvn package`
 * Deploy the WAR file to a servlet container such as Tomcat
 
 # Structure
-The project uses tools such as servlets, filters, JSP, JSTL, and password encryption. The project follows the Model-View-Controller (MVC) design pattern, with separate packages for controllers, models, and views.
+* Controllers:
+  * Car controllers:
+    * `AddCarController` to adding `Car` model to DB
+    * `AddDriverToCarController` to adding `Driver` model to existed `Car` model in DB
+    * `DeleteCarController` to deleting `Car` model in DB
+    * `GetAllCarsController` to getting all `Car` models from DB
+    * `GetMyCurrentCarsController` to getting all my current cars from DB
+  * Driver controllers:
+    * `AddDriverController` to adding `Driver` model to DB
+    * `DeleteDriverController` to deleting `Driver` model in DB
+    * `GetAllDriversController` to getting all `Driver` models from DB
+  * Manufacturer controllers:
+    * `AddManufacturerController` to adding `Manufacturer` model to DB
+    * `DeleteManufacturerController` to deleting `Manufacturer` model in DB
+    * `GetAllManufacturersController` to getting all `Manufacturer` models from DB
+  * `IndexController` get to the home page
+  
+* Exception:
+  * `AuthenticationException` class - an exception indicating problems with authentication
+  * `DataProcessingException` class is wrapping SQL exceptions to rethrow them as a runtime ones
+  
+* DAO:
+  * `CarDaoImpl` handler of `Car` model to DB
+  * `DriverDaoImpl` handler of `Driver` model to DB
+  * `ManufacturerDaoImpl` handler of `Manufacturer` model to DB
+  
+* Model:
+  * `Car` model class
+  * `Driver` model class
+  * `Manufacturer` model class
+  
+* Service:
+  * `AuthenticationServiceImpl` class
+  * `CarServiceImpl`
+  * `DriverServiceImpl`
+  * `ManufacturerServiceImpl`
+  
+* Util:
+  * `ConnectionUtil` class for instance connection to DB
+  
+* Web.filter:
+  * `AuthenticationFilter` class to handle Authentication process
+
+# Used technologies:
+* JDK 1.8 version
+* Maven 3.8.0 version
+* JDBC 4.2 version
+* MySql 8.0.32 version
+* Java Servlets 4.0.1 version
+* Apache Tomcat 10.1.17 version
 
 # Author
 
 Denys Dominskyi
-
 
