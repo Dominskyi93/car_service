@@ -24,20 +24,20 @@ To run the project locally, follow these steps:
 # Structure
 * Controllers:
   * Car controllers:
-    * `AddCarController` to adding `Car` model to DB
-    * `AddDriverToCarController` to adding `Driver` model to existed `Car` model in DB
-    * `DeleteCarController` to deleting `Car` model in DB
-    * `GetAllCarsController` to getting all `Car` models from DB
-    * `GetMyCurrentCarsController` to getting all my current cars from DB
+    * `AddCarController` (`/cars/add`) to adding `Car` model to DB
+    * `AddDriverToCarController` (`/cars/drivers/add`) to adding `Driver` model to existed `Car` model in DB
+    * `DeleteCarController` (`/cars/delete`) to deleting `Car` model in DB
+    * `GetAllCarsController` (`/cars`) to getting all `Car` models from DB
+    * `GetMyCurrentCarsController` (`/cars/my`) to getting all my current cars from DB
   * Driver controllers:
-    * `AddDriverController` to adding `Driver` model to DB
-    * `DeleteDriverController` to deleting `Driver` model in DB
-    * `GetAllDriversController` to getting all `Driver` models from DB
+    * `AddDriverController` (`/drivers/add`) to adding `Driver` model to DB
+    * `DeleteDriverController` (`/drivers/delete`) to deleting `Driver` model in DB
+    * `GetAllDriversController` (`/drivers`) to getting all `Driver` models from DB
   * Manufacturer controllers:
-    * `AddManufacturerController` to adding `Manufacturer` model to DB
-    * `DeleteManufacturerController` to deleting `Manufacturer` model in DB
-    * `GetAllManufacturersController` to getting all `Manufacturer` models from DB
-  * `IndexController` get to the home page
+    * `AddManufacturerController` (`/manufacturers/add`) to adding `Manufacturer` model to DB
+    * `DeleteManufacturerController` (`/manufacturers/delete`) to deleting `Manufacturer` model in DB
+    * `GetAllManufacturersController` (`/manufacturers`) to getting all `Manufacturer` models from DB
+  * `IndexController` (`/index`) get to the home page
   
 * Exception:
   * `AuthenticationException` class - an exception indicating problems with authentication
@@ -64,6 +64,28 @@ To run the project locally, follow these steps:
   
 * Web.filter:
   * `AuthenticationFilter` class to handle Authentication process
+
+# Security
+The project has a built-in security mechanism that ensures the protection of user confidential
+information and ride data. To use the service, you need to register and authorize.
+
+* Registration
+To register for the service, you need to make a POST request to the following endpoint:`/registration`
+Where registration is the endpoint that handles registration requests. The request body should contain the following fields:
+
+  * `login`: user's login address
+  * `password`: password for logging into the system
+  * `name`: user's name
+In response to the request, you will receive a token that you will need to use for authorization.
+
+* Authorization
+To authorize, make a POST request to the following endpoint: `/login`
+Where login is the endpoint that handles authorization requests. The request body should contain the following fields:
+
+  * `login`: user's login address
+  * `password`: password for logging into the system
+In response to the request, you will receive a token that you will need to use to access protected resources.
+Also we can perform a logout (`/logout`).
 
 # Used technologies:
 * JDK 1.8 version
